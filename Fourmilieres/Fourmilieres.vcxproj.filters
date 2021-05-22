@@ -13,10 +13,87 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers sources\application">
+      <UniqueIdentifier>{4f0138b8-d552-473c-aec2-d78ae3583b31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\gamestates">
+      <UniqueIdentifier>{4b8f8917-2b1e-4ad2-bce2-bc2284b92d95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\components">
+      <UniqueIdentifier>{b3c28cd2-3dfd-40cd-927f-918d393cc97c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\game">
+      <UniqueIdentifier>{c1c7fa4a-2795-4458-bc6d-b18ffefa1074}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="application.cpp">
+      <Filter>Fichiers sources\application</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate.cpp">
+      <Filter>Fichiers sources\gamestates</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Fichiers sources\gamestates</Filter>
+    </ClCompile>
+    <ClCompile Include="tilemap.cpp">
+      <Filter>Fichiers sources\components</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Fichiers sources\application</Filter>
+    </ClCompile>
+    <ClCompile Include="textbox.cpp">
+      <Filter>Fichiers sources\components</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Fichiers sources\gamestates</Filter>
+    </ClCompile>
+    <ClCompile Include="world.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="ant.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="application.h">
+      <Filter>Fichiers sources\application</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Fichiers sources\application</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Fichiers sources\application</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate.h">
+      <Filter>Fichiers sources\gamestates</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Fichiers sources\gamestates</Filter>
+    </ClInclude>
+    <ClInclude Include="tilemap.h">
+      <Filter>Fichiers sources\components</Filter>
+    </ClInclude>
+    <ClInclude Include="textbox.h">
+      <Filter>Fichiers sources\components</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Fichiers sources\gamestates</Filter>
+    </ClInclude>
+    <ClInclude Include="world.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="ant.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
