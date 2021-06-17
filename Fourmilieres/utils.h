@@ -13,6 +13,4 @@ public:
 	static double distance(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
 	// Fonction split pour les strings, renvoit les différents morceaux de la chaine entre les delimiter
 	static std::vector<std::string> split(std::string stringToSplit, std::string delimiter);
-	// True en mode debug
-	static bool debugMode;
 };

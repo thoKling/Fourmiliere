@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "application.h"
+#include "config.h"
 
 game::game()
 {
@@ -15,6 +16,13 @@ game::~game()
 
 void game::update()
 {
+	if (_currentTick % Config::getNbrOfTickPerTurn() == 0) {
+		_currentTick = 1;
+		_world.turnUpdate();
+		std::cout << "Nouveau tour" << std::endl;
+	}
+	_currentTick++;
+
 	_world.update();
 	_camera.update(_world.mapSizeInPixel());
 }

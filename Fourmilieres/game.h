@@ -14,6 +14,8 @@ public:
 	virtual void manageDraw(sf::RenderWindow& window);
 
 private:
+	int _currentTick = 0;
+
 	World _world;
 	Camera _camera;
 };

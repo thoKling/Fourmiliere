@@ -54,10 +54,46 @@
     <ClCompile Include="world.cpp">
       <Filter>Fichiers sources\game</Filter>
     </ClCompile>
-    <ClCompile Include="camera.cpp">
+    <ClCompile Include="ant.cpp">
       <Filter>Fichiers sources\game</Filter>
     </ClCompile>
-    <ClCompile Include="ant.cpp">
+    <ClCompile Include="foodManager.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="food.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="textureManager.cpp">
+      <Filter>Fichiers sources\components</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Fichiers sources\components</Filter>
+    </ClCompile>
+    <ClCompile Include="anthill.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="anthillManager.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="drawableEntity.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>Fichiers sources\application</Filter>
+    </ClCompile>
+    <ClCompile Include="warriorAnt.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="wokerAnt.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="queenAnt.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="eggAnt.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
+    <ClCompile Include="larvaAnt.cpp">
       <Filter>Fichiers sources\game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,10 +125,43 @@
     <ClInclude Include="world.h">
       <Filter>Fichiers sources\game</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
+    <ClInclude Include="ant.h">
       <Filter>Fichiers sources\game</Filter>
     </ClInclude>
-    <ClInclude Include="ant.h">
+    <ClInclude Include="foodManager.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="food.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="textureManager.h">
+      <Filter>Fichiers sources\components</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Fichiers sources\components</Filter>
+    </ClInclude>
+    <ClInclude Include="anthill.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="anthillManager.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="drawableEntity.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="warriorAnt.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="workerAnt.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="queenAnt.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="eggAnt.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="larvaAnt.h">
       <Filter>Fichiers sources\game</Filter>
     </ClInclude>
   </ItemGroup>

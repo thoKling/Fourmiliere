@@ -124,28 +124,51 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ant.cpp" />
+    <ClCompile Include="anthill.cpp" />
+    <ClCompile Include="anthillManager.cpp" />
     <ClCompile Include="application.cpp" />
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="config.cpp" />
+    <ClCompile Include="drawableEntity.cpp" />
+    <ClCompile Include="eggAnt.cpp" />
+    <ClCompile Include="food.cpp" />
+    <ClCompile Include="foodManager.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gamestate.cpp" />
+    <ClCompile Include="larvaAnt.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="queenAnt.cpp" />
     <ClCompile Include="textbox.cpp" />
+    <ClCompile Include="textureManager.cpp" />
     <ClCompile Include="tilemap.cpp" />
     <ClCompile Include="utils.cpp" />
+    <ClCompile Include="warriorAnt.cpp" />
+    <ClCompile Include="wokerAnt.cpp" />
     <ClCompile Include="world.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ant.h" />
+    <ClInclude Include="anthill.h" />
+    <ClInclude Include="anthillManager.h" />
     <ClInclude Include="application.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="config.h" />
+    <ClInclude Include="drawableEntity.h" />
+    <ClInclude Include="eggAnt.h" />
+    <ClInclude Include="food.h" />
+    <ClInclude Include="foodManager.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gamestate.h" />
+    <ClInclude Include="larvaAnt.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="queenAnt.h" />
     <ClInclude Include="textbox.h" />
+    <ClInclude Include="textureManager.h" />
     <ClInclude Include="tilemap.h" />
     <ClInclude Include="utils.h" />
+    <ClInclude Include="warriorAnt.h" />
+    <ClInclude Include="workerAnt.h" />
     <ClInclude Include="world.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

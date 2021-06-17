@@ -75,11 +75,6 @@ void Camera::moveCamera(sf::Vector2u mapSize)
 		y += -_velocity;
 	}
 
-	// Pour ne pas avoir de déplacement plus rapide en diagonale
-	sf::Vector2f unitVec = Utils::getVecUnit(sf::Vector2f(0, 0), sf::Vector2f(x, y));
-	x *= std::abs(unitVec.x);
-	y *= std::abs(unitVec.y);
-
 	// Déplacement
 	_currentView.move(x, y);
 }

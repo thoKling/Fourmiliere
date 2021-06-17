@@ -3,7 +3,6 @@
 #include <iostream>
 
 #include "menu.h"
-#include "utils.h"
 #include "config.h"
 
 std::stack<GameState*> Application::_states;
@@ -12,7 +11,7 @@ sf::RenderWindow Application::_window;
 Application::Application()
 {
 	// on crée la fenêtre avec le menu
-	_window.create(sf::VideoMode(WINDOWS_WIDTH, WINDOWS_HEIGHT), "Infected Prison", sf::Style::Titlebar | sf::Style::Close);
+	_window.create(sf::VideoMode(WINDOWS_WIDTH, WINDOWS_HEIGHT), "The Fourmiliere", sf::Style::Titlebar | sf::Style::Close);
 	setState(new Menu());
 }
 
@@ -73,7 +72,7 @@ void Application::handleInputs(sf::Event event)
 	// Toggle debugMode
 	if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::F3)
 	{
-		Utils::debugMode = !Utils::debugMode;
+		Config::debugMode = !Config::debugMode;
 	}
 
 	// Récupération de la position de la souris par rapport à la fenêtre
