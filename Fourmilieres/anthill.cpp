@@ -2,12 +2,14 @@
 
 #include "world.h"
 #include "utils.h"
+#include "hud.h"
 
 #include "warriorAnt.h"
 #include "workerAnt.h"
 #include "queenAnt.h"
 
 #include <iostream>
+#include <string>
 
 Anthill::Anthill(World& world, int maxFood, int maxAnts, std::vector<sf::Vector2u> tiles, int evaporationRate) :
 	_world(world), 
@@ -29,10 +31,6 @@ Anthill::Anthill(World& world, int maxFood, int maxAnts, std::vector<sf::Vector2
 	_antList.push_back(queen);
 
 	_food = 50;
-
-	for (auto ant : _antList) {
-		std::cout << ant->getPosition().x << " " << ant->getPosition().y;
-	}
 }
 
 Anthill::~Anthill() {
@@ -76,9 +74,13 @@ void Anthill::turnUpdate() {
 		}
 	}
 	_food -= foodToBeConsumed;
+	
 	if (_food < 0) {
 		std::cout << "perdu" << std::endl;
 	}
+
+	Hud::getInstance().setAntNb(Utils::to_str(_antList.size()) + "/" + Utils::to_str(_maxAnts));
+	Hud::getInstance().setFoodNb(Utils::to_str(_food) + "/" + Utils::to_str(_maxFood));
 }
 
 void Anthill::addAnt(Ant* newAnt) {
@@ -94,11 +96,16 @@ void Anthill::removeAnt(Ant* ant) {
 	_antList = res;
 }
 
+bool Anthill::isFullOfAnts()
+{
+	return _antList.size() == _maxAnts;
+}
+
 void Anthill::dropFood(int food) {
 	_food += food;
 
-	if (food > _maxFood)
-		food = _maxFood;
+	if (_food > _maxFood)
+		_food = _maxFood;
 }
 
 bool Anthill::isOnAnthill(sf::Vector2u position)

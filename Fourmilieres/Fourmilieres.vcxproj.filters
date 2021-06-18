@@ -99,6 +99,9 @@
     <ClCompile Include="pheromonesManager.cpp">
       <Filter>Fichiers sources\game</Filter>
     </ClCompile>
+    <ClCompile Include="hud.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="application.h">
@@ -168,6 +171,9 @@
       <Filter>Fichiers sources\game</Filter>
     </ClInclude>
     <ClInclude Include="pheromonesManager.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="hud.h">
       <Filter>Fichiers sources\game</Filter>
     </ClInclude>
   </ItemGroup>

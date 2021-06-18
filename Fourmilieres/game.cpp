@@ -5,6 +5,7 @@
 
 #include "application.h"
 #include "config.h"
+#include "hud.h"
 
 game::game(sf::Vector2u mapSize, int obstaclesNbr, int foodNbr, int evaporationRate) :
 	_world(mapSize, obstaclesNbr, foodNbr, evaporationRate)
@@ -36,6 +37,8 @@ void game::handleInputs(const sf::Vector2i& mousePixelPos, const sf::Vector2f& m
 void game::manageDraw(sf::RenderWindow& window)
 {
 	window.setView(_camera.getView());
-
 	_world.draw(window);
+
+	window.setView(window.getDefaultView());
+	window.draw(Hud::getInstance());
 }

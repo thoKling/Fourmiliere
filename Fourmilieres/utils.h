@@ -2,6 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <sstream>
+
 class Utils
 {
 public:
@@ -16,7 +18,18 @@ public:
 	// Fonction pour voir si un vecteur contient une valeur donnée
 	template <typename T>
 	static bool contains(std::vector<T> array, T object);
+	// Conversion de string en utilisant ostringstream
+	template<typename T>
+	static std::string to_str(const T & t);
 };
+
+template<typename T>
+inline std::string Utils::to_str(const T & t)
+{
+	std::ostringstream os;
+	os << t;
+	return os.str();
+}
 
 template<typename T>
 inline bool Utils::contains(std::vector<T> array, T object)

@@ -26,6 +26,8 @@ public:
 	void addAnt(Ant* newAnt);
 	void removeAnt(Ant* ant);
 
+	bool isFullOfAnts();
+
 private:
 	World& _world;
 	PheromonesManager _pheromonesManager;
