@@ -64,7 +64,7 @@ int FoodManager::harvest(sf::Vector2u position)
 	for (auto food : _foodList) {
 		if (food->getTilePosition() == position) {
 			res = food->harvest();
-			if (food->getFoodLeft() == 0) {
+			if (food->getFoodLeft() <= 0) {
 				removeFood(position);
 			}
 			break;

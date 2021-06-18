@@ -138,6 +138,7 @@
     <ClCompile Include="larvaAnt.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="pheromonesManager.cpp" />
     <ClCompile Include="queenAnt.cpp" />
     <ClCompile Include="textbox.cpp" />
     <ClCompile Include="textureManager.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="gamestate.h" />
     <ClInclude Include="larvaAnt.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="pheromonesManager.h" />
     <ClInclude Include="queenAnt.h" />
     <ClInclude Include="textbox.h" />
     <ClInclude Include="textureManager.h" />

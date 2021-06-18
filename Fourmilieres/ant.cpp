@@ -9,6 +9,7 @@
 #include <math.h>       /* ceil */
 
 Ant::Ant(World& world, Anthill& anthill, sf::Vector2u position) : world(world), anthill(anthill) {
+	setOrigin(32, 32);
 	_lastTilePosition = getTilePosition();
 	_nextDestinationTile = position;
 	setTilePosition(position);
@@ -43,14 +44,14 @@ bool Ant::compareTypes(Ant* ant1, Ant* ant2)
 }
 
 void Ant::moveToDestination() {
-	//orientateToDestination();
+	orientateToDestination();
 
 	// 64 c'est la taille d'un tile en pixel, on enleve 1 pour aller légerement plus vite que la fin du tour et on arrondit au dessus
 	float velocity = ceil(64.f / (Config::getNbrOfTickPerTurn() - 1));
 	//std::cout << _lastTilePosition.x << " " << _lastTilePosition.y << "--" << _nextDestinationTile.x << " " << _nextDestinationTile.y << " v: "<< velocity <<std::endl;
 
 	// Si la distance entre la tile et la fourmi est inférieur à la vélocité alors on peut juste la mettre dessus pour éviter les 0.... pixels
-	sf::Vector2f destinationPos = sf::Vector2f(_nextDestinationTile.x * 64, _nextDestinationTile.y * 64);
+	sf::Vector2f destinationPos = sf::Vector2f(_nextDestinationTile.x * 64 + getOrigin().x, _nextDestinationTile.y * 64 + getOrigin().y);
 
 	if (Utils::distance(destinationPos, getPosition()) <= velocity) {
 		_lastTilePosition = _nextDestinationTile;

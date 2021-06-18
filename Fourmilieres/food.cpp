@@ -3,7 +3,7 @@
 #include "utils.h"
 
 Food::Food() {
-	_foodLeft = 500;
+	_foodLeft = 300;
 
 	_sprite.setTexture(*TextureManager::loadText("Ressources/apple.png"));
 }
@@ -20,11 +20,12 @@ int Food::getFoodLeft() {
 }
 
 int Food::harvest() {
-	if (_foodLeft > 5) {
-		_foodLeft = _foodLeft - 5;
-		return 5;
+	if (_foodLeft > 15) {
+		_foodLeft -= 15;
+		return 15;
 	}
 	else {
+		_foodLeft = 0;
 		return _foodLeft;
 	}
 }

@@ -1,11 +1,21 @@
 #include "anthill.h"
+
+#include "world.h"
+#include "utils.h"
+
 #include "warriorAnt.h"
 #include "workerAnt.h"
 #include "queenAnt.h"
 
 #include <iostream>
 
-Anthill::Anthill(World& world, int maxFood, int maxAnts): _world(world), _maxFood(maxFood), _maxAnts(maxAnts) {
+Anthill::Anthill(World& world, int maxFood, int maxAnts, std::vector<sf::Vector2u> tiles, int evaporationRate) :
+	_world(world), 
+	_maxFood(maxFood), 
+	_maxAnts(maxAnts), 
+	_pheromonesManager(world.getTileMap().getMapSize(), evaporationRate),
+	_tiles(tiles)
+{
 	WarriorAnt* wa = new WarriorAnt(world, *this, sf::Vector2u(20, 20));
 	_antList.push_back(wa);
 
@@ -48,6 +58,7 @@ void Anthill::update() {
 
 void Anthill::turnUpdate() {
 	float foodToBeConsumed = 0;
+	_pheromonesManager.turnUpdate();
 	// On copie la liste, on aura des problèmes d'itérateur sinon si une reine pond des oeufs pendant le tour ou qu'un oeuf évolue
 	auto antCopyList = _antList;
 	for (auto ant : antCopyList) {
@@ -60,7 +71,7 @@ void Anthill::turnUpdate() {
 			foodToBeConsumed += 0.5;
 			break;
 		case Ant::AntType::Queen:
-			foodToBeConsumed += 2;
+			foodToBeConsumed += 1;
 			break;
 		}
 	}
@@ -68,7 +79,6 @@ void Anthill::turnUpdate() {
 	if (_food < 0) {
 		std::cout << "perdu" << std::endl;
 	}
-	std::cout << _food;
 }
 
 void Anthill::addAnt(Ant* newAnt) {
@@ -89,4 +99,14 @@ void Anthill::dropFood(int food) {
 
 	if (food > _maxFood)
 		food = _maxFood;
+}
+
+bool Anthill::isOnAnthill(sf::Vector2u position)
+{
+	return Utils::contains(_tiles, position);
+}
+
+PheromonesManager& Anthill::getPheromonesManager()
+{
+	return _pheromonesManager;
 }

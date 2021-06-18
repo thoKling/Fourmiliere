@@ -13,7 +13,7 @@ TileMap::~TileMap()
 {
 }
 
-void TileMap::generateMap(const sf::Vector2u size, const int obstaclesNbr, const int foodNbr)
+void TileMap::generateMap(sf::Vector2u size, int obstaclesNbr)
 {
 	_tiles = std::vector<std::vector<int>>(size.x, std::vector<int>(size.y, 0));
 	for (int i = 0; i < size.x; i++) {

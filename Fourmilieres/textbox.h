@@ -5,7 +5,7 @@
 class TextBox : public sf::Drawable, public sf::Transformable
 {
 public:
-	TextBox();
+	TextBox(std::string placeholder);
 	~TextBox();
 
 	std::string getStr();
@@ -22,6 +22,7 @@ public:
 	void handleInputs(const sf::Event& event, const sf::Vector2f& mousePos);
 
 private:
+	void updateCursorPosition();
 	bool _hasFocus;
 
 	sf::RectangleShape _rect;

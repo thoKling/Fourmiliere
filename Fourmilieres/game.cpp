@@ -6,7 +6,8 @@
 #include "application.h"
 #include "config.h"
 
-game::game()
+game::game(sf::Vector2u mapSize, int obstaclesNbr, int foodNbr, int evaporationRate) :
+	_world(mapSize, obstaclesNbr, foodNbr, evaporationRate)
 {
 }
 
@@ -19,7 +20,7 @@ void game::update()
 	if (_currentTick % Config::getNbrOfTickPerTurn() == 0) {
 		_currentTick = 1;
 		_world.turnUpdate();
-		std::cout << "Nouveau tour" << std::endl;
+		//std::cout << "Nouveau tour" << std::endl;
 	}
 	_currentTick++;
 

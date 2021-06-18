@@ -96,6 +96,9 @@
     <ClCompile Include="larvaAnt.cpp">
       <Filter>Fichiers sources\game</Filter>
     </ClCompile>
+    <ClCompile Include="pheromonesManager.cpp">
+      <Filter>Fichiers sources\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="application.h">
@@ -162,6 +165,9 @@
       <Filter>Fichiers sources\game</Filter>
     </ClInclude>
     <ClInclude Include="larvaAnt.h">
+      <Filter>Fichiers sources\game</Filter>
+    </ClInclude>
+    <ClInclude Include="pheromonesManager.h">
       <Filter>Fichiers sources\game</Filter>
     </ClInclude>
   </ItemGroup>

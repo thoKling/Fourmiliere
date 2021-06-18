@@ -7,7 +7,7 @@
 class game : public GameState
 {
 public:
-	game();
+	game(sf::Vector2u mapSize, int obstaclesNbr, int foodNbr, int evaporationRate);
 	~game();
 	virtual void update();
 	virtual void handleInputs(const sf::Vector2i& mousePixelPos, const sf::Vector2f& mousePos, const sf::Event& event);

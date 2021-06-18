@@ -8,7 +8,7 @@
 class World
 {
 public:
-	World();
+	World(sf::Vector2u mapSize, int obstaclesNbr, int foodNbr, int evaporationRate);
 	~World();
 
 	// Update les différentes entitées en jeux

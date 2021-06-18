@@ -13,4 +13,18 @@ public:
 	static double distance(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
 	// Fonction split pour les strings, renvoit les différents morceaux de la chaine entre les delimiter
 	static std::vector<std::string> split(std::string stringToSplit, std::string delimiter);
+	// Fonction pour voir si un vecteur contient une valeur donnée
+	template <typename T>
+	static bool contains(std::vector<T> array, T object);
 };
+
+template<typename T>
+inline bool Utils::contains(std::vector<T> array, T object)
+{
+	for (auto val : array) {
+		if (val == object) {
+			return true;
+		}
+	}
+	return false;
+}

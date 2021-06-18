@@ -15,7 +15,7 @@ sf::Vector2u DrawableEntity::getTilePosition() {
 }
 
 void DrawableEntity::setTilePosition(sf::Vector2u newPos) {
-	setPosition(newPos.x * 64, newPos.y * 64);
+	setPosition(newPos.x * 64 + getOrigin().x, newPos.y * 64 + getOrigin().y);
 }
 
 void DrawableEntity::draw(sf::RenderTarget& target, sf::RenderStates states) const

@@ -18,7 +18,7 @@ public:
 
 	void draw(sf::RenderWindow& window);
 
-	void createAnthill(World& world, sf::Vector2u position);
+	void createAnthill(World& world, sf::Vector2u position, int evaporationRate);
 
 private:
 	std::vector<Anthill*> _anthillList;

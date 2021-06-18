@@ -20,7 +20,7 @@ QueenAnt::~QueenAnt()
 void QueenAnt::turnUpdate() {
 	WorkerAnt::move(); // On bouge de facon aléatoire dans la fourmiliere
 	int randNb = rand() % 100;
-	if (randNb < 5) {
+	if (randNb < 8) {
 		layEgg();
 	}
 }

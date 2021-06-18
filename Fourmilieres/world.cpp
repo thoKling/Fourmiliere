@@ -1,11 +1,11 @@
 #include "World.h"
 #include "config.h"
 
-World::World()
+World::World(sf::Vector2u mapSize, int obstaclesNbr, int foodNbr, int evaporationRate)
 {
-	_tilemap.generateMap(sf::Vector2u(64, 64), 1000, 500);
-	_foodManager.generateFood(500, _tilemap);
-	_anthillManager.createAnthill(*this, sf::Vector2u(20, 20));
+	_tilemap.generateMap(mapSize, obstaclesNbr);
+	_foodManager.generateFood(foodNbr, _tilemap);
+	_anthillManager.createAnthill(*this, sf::Vector2u(20, 20), evaporationRate);
 }
 
 World::~World()

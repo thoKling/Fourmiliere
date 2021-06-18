@@ -7,7 +7,7 @@ public:
 	TileMap();
 	~TileMap();
 
-	void generateMap(sf::Vector2u size, int obstaclesNbr, int foodNbr);
+	void generateMap(sf::Vector2u size, int obstaclesNbr);
 	sf::Vector2u getMapSize();
 	bool isObstacle(sf::Vector2u position);
 	bool isAnthill(sf::Vector2u position);

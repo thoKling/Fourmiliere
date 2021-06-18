@@ -1,15 +1,19 @@
 #include "TextBox.h"
 
+#include "utils.h"
 #include <iostream>
+#include <string>
 
-TextBox::TextBox()
+std::vector<sf::Uint32> digitsUnicode { 0x000030, 0x000031, 0x000032, 0x000033, 0x000034, 0x000035, 0x000036, 0x000037, 0x000038, 0x000039 };
+
+TextBox::TextBox(std::string placeholder)
 {
 	_hasFocus = false;
 
 	_rect.setFillColor(sf::Color::White);
 
 	// Initialisation de la chaîne de charactères
-	_str = "";
+	_str = placeholder;
 
 	// Création du texte à afficher
 	if (!_font.loadFromFile("Ressources/comicz.ttf"))
@@ -25,7 +29,6 @@ TextBox::TextBox()
 	_cursor.setString("");
 	_cursor.setCharacterSize(10);
 	_cursor.setFillColor(sf::Color::Black);
-	//_cursor.setPosition(_text.getGlobalBounds().left + _text.getLocalBounds().width, _posY);
 }
 
 TextBox::~TextBox()
@@ -64,7 +67,7 @@ sf::FloatRect TextBox::getHitBox()
 
 void TextBox::focus()
 {
-	std::cout << "focus" << std::endl;
+	updateCursorPosition();
 	_hasFocus = true;
 	_cursor.setString("|");
 }
@@ -98,22 +101,25 @@ void TextBox::handleInputs(const sf::Event& event, const sf::Vector2f& mousePos)
 				_str.pop_back();
 				_text.setString(_str);
 
-				// update de la position du curseur
-				_cursor.setPosition(_text.getGlobalBounds().left + _text.getLocalBounds().width, _text.getGlobalBounds().top);
+				updateCursorPosition();
 			}
 		}
 
 		// Sinon, ajout du charactère tapé par l'utilisateur
-		else
+		else if (Utils::contains(digitsUnicode, event.text.unicode))
 		{
-			if (_str.size() < 25)
+			if (_str.size() < 5)
 			{
 				_str.push_back(event.text.unicode);
 				_text.setString(_str);
 
-				// update de la position du curseur
-				_cursor.setPosition(_text.getGlobalBounds().left + _text.getLocalBounds().width, _text.getGlobalBounds().top);
+				updateCursorPosition();
 			}
 		}
 	}
+}
+
+void TextBox::updateCursorPosition()
+{
+	_cursor.setPosition(_text.getGlobalBounds().left + _text.getLocalBounds().width, _text.getGlobalBounds().top);
 }

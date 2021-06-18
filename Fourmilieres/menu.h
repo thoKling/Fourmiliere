@@ -34,4 +34,5 @@ private:
 	sf::Text _btnPlay;
 
 	void selectTextbox(TextBox& selectedTextbox);
+	void play();
 };

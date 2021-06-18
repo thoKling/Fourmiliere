@@ -32,7 +32,7 @@ void AnthillManager::draw(sf::RenderWindow& window) {
 	}
 }
 
-void AnthillManager::createAnthill(World& world, sf::Vector2u position) 
+void AnthillManager::createAnthill(World& world, sf::Vector2u position, int evaporationRate) 
 {
 	// On nettoie la map dans la zone de la fourmiliere et on met la fourmiliere
 	/// ######
@@ -41,6 +41,7 @@ void AnthillManager::createAnthill(World& world, sf::Vector2u position)
 	/// #FFFF#   == / Notre fourmiliere trop cool
 	/// ##FF##
 	/// ######
+	auto tiles = std::vector<sf::Vector2u>();
 	for(int i = 0; i < 6; i++) {
 		for(int j = 0; j < 6; j++) {
 			sf::Vector2u currentPosition = sf::Vector2u(position.x - 2 + i, position.y - 2 + j);
@@ -55,9 +56,10 @@ void AnthillManager::createAnthill(World& world, sf::Vector2u position)
 				world.getTileMap().changeTile(currentPosition, 0);
 			}
 			else {
+				tiles.push_back(currentPosition);
 				world.getTileMap().changeTile(currentPosition, 2);
 			}
 		}
 	}
-	_anthillList.push_back(new Anthill(world, 200, 50));
+	_anthillList.push_back(new Anthill(world, 200, 50, tiles, evaporationRate));
 }
